@@ -160,6 +160,9 @@ SRCBINDIR := bin/windows
 else ifeq ($(GOOS),darwin)
 BINSFX :=
 SRCBINDIR := bin/darwin
+else ifeq ($(GOOS),netbsd)
+BINSFX :=
+SRCBINDIR := bin/netbsd
 else
 BINSFX := -remote
 SRCBINDIR := bin
@@ -344,6 +347,13 @@ podman-remote-windows: ## Build podman-remote for Windows
 		CGO_ENABLED=0 \
 		GOOS=windows \
 		bin/windows/podman.exe
+
+.PHONY: podman-remote-netbsd
+podman-remote-netbsd: ## Build podman-remote for NetBSD
+	$(MAKE) \
+		CGO_ENABLED=0 \
+		GOOS=netbsd \
+		bin/netbsd/podman
 
 .PHONY: podman-remote-darwin
 podman-remote-darwin: ## Build podman-remote for macOS

@@ -54,7 +54,7 @@ func newPodmanConfig() {
 
 	var mode entities.EngineMode
 	switch runtime.GOOS {
-	case "darwin", "windows":
+	case "darwin", "netbsd", "windows":
 		mode = entities.TunnelMode
 	case "linux":
 		// Some linux clients might only be compiled without ABI
