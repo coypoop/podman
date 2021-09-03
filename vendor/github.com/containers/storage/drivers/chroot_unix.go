@@ -1,4 +1,4 @@
-// +build linux darwin freebsd solaris
+// +build !windows
 
 package graphdriver
 

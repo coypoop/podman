@@ -1,4 +1,4 @@
-// +build linux,!mips,!mipsle,!mips64,!mips64le
+// +build linux,!mips,!mipsle,!mips64,!mips64le netbsd
 
 package util
 
